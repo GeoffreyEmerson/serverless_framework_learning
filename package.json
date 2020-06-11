@@ -1,10 +1,15 @@
 {
   "name": "auction-service",
   "version": "1.0.0",
-  "description": "Codingly template for Serverless Framework projects",
+  "description": "A demo Serverless Framework project used during a Udemy tutorial",
   "author": "Ariel Weinberger <ariel@codingly.io>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:GeoffreyEmerson/serverless_framework_learning.git"
+  },
   "devDependencies": {
+    "@types/aws-lambda": "^8.10.55",
     "babel-core": "^6.25.0",
     "babel-loader": "^7.1.1",
     "babel-plugin-transform-runtime": "^6.23.0",
@@ -19,6 +24,7 @@
     "@middy/http-error-handler": "^1.0.0",
     "@middy/http-event-normalizer": "^1.0.0",
     "@middy/http-json-body-parser": "^1.0.0",
+    "@middy/validator": "^1.0.0",
     "aws-sdk": "^2.639.0",
     "http-errors": "^1.7.3",
     "uuid": "^8.1.0"
