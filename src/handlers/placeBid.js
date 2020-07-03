@@ -7,7 +7,7 @@ import placeBidSchema from '../lib/schemas/placeBidSchema';
 
 const dynamodb = new AWS.DynamoDB.DocumentClient();
 
-async function placeBid(event, context) {
+async function placeBid(event) {
     const { id } = event.pathParameters;
     const { amount } = event.body;
     const { email } = event.requestContext.authorizer;

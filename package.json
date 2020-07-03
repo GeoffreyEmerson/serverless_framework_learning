@@ -8,6 +8,10 @@
     "type": "git",
     "url": "git@github.com:GeoffreyEmerson/serverless_framework_learning.git"
   },
+  "scripts": {
+    "test": "npm run lint && serverless-bundle test",
+    "lint": "eslint ."
+  },
   "devDependencies": {
     "@types/aws-lambda": "^8.10.55",
     "babel-core": "^6.25.0",
