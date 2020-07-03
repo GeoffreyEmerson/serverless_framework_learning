@@ -1,6 +1,7 @@
 import middy from '@middy/core';
 import httpErrorHandler from '@middy/http-error-handler';
 import validator from '@middy/validator';
+import cors from '@middy/http-cors';
 import createError from 'http-errors';
 import { getAuctionById } from "./getAuction";
 import { uploadPictureToS3 } from "../lib/uploadPictureToS3";
@@ -41,6 +42,8 @@ async function uploadAuctionPicture(event) {
     }
 }
 
+// This function handles large raw base64 strings in the body, so it will not use the common middleware
 export const handler = middy(uploadAuctionPicture)
     .use(httpErrorHandler())
-    .use(validator({ inputSchema: uploadAuctionPictureSchema }));
+    .use(validator({ inputSchema: uploadAuctionPictureSchema }))
+    .use(cors());
